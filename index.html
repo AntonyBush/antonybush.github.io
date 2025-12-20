@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antony Bush | Backend Software Engineer</title>
+    <meta name="description" content="Portfolio of Antony Bush - Backend Software Engineer specializing in distributed systems, WebRTC, and fintech infrastructure">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">AB</span>
+                <span class="logo-bar"></span>
+            </a>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Floating Quote -->
+    <div class="floating-quote" id="floating-quote">
+        <div class="quote-content">
+            <p class="quote-text"></p>
+            <span class="quote-author"></span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Available for opportunities</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Hi, I'm</span>
+                <span class="title-name glitch" data-text="Antony Bush">Antony Bush</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typing-text"></span>
+                <span class="cursor">|</span>
+            </p>
+            <p class="hero-description">
+                Backend Software Engineer crafting distributed systems & real-time communication solutions.
+                Building the infrastructure that powers tomorrow's applications.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Let's Connect</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#experience" class="btn btn-secondary">View My Work</a>
+            </div>
+            <div class="hero-quote">
+                <div class="quote-icon">"</div>
+                <p>If you don't take risks, you can't create a future.</p>
+                <span class="quote-source">— Monkey D. Luffy, One Piece</span>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+  <span class="property">name</span>: <span class="string">"Antony Bush"</span>,
+  <span class="property">role</span>: <span class="string">"Backend Engineer"</span>,
+  <span class="property">passion</span>: [
+    <span class="string">"Distributed Systems"</span>,
+    <span class="string">"WebRTC"</span>,
+    <span class="string">"Microservices"</span>
+  ],
+  <span class="property">motto</span>: <span class="string">"Build. Scale. Repeat."</span>
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">The Journey So Far</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I'm a <strong>Backend Software Engineer</strong> based in Mumbai, with expertise in 
+                        architecting distributed systems, real-time communication, and secure fintech infrastructure.
+                    </p>
+                    <p>
+                        My journey has led me through scaling high-availability microservices, reducing cloud costs 
+                        by 23%, and boosting service availability by 75% through rigorous automation and clean architecture. 
+                        I thrive on challenges that push the boundaries of what's possible in backend development.
+                    </p>
+                    <div class="about-quote">
+                        <div class="quote-mark">"</div>
+                        <blockquote>
+                            I don't have any enemies. There is no one I cannot forgive.
+                        </blockquote>
+                        <cite>— Thorfinn, Vinland Saga</cite>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">75%</span>
+                            <span class="stat-label">Service Availability ↑</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">23%</span>
+                            <span class="stat-label">Cloud Costs ↓</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-hobbies">
+                    <h3>When I'm Not Coding</h3>
+                    <div class="hobbies-grid">
+                        <div class="hobby-card">
+                            <div class="hobby-icon">🎌</div>
+                            <h4>Anime</h4>
+                            <p>From One Piece's adventures to Vinland Saga's philosophy</p>
+                        </div>
+                        <div class="hobby-card">
+                            <div class="hobby-icon">🎮</div>
+                            <h4>Video Games</h4>
+                            <p>Exploring virtual worlds and epic storylines</p>
+                        </div>
+                        <div class="hobby-card">
+                            <div class="hobby-icon">📓</div>
+                            <h4>Journaling</h4>
+                            <p>Reflecting on thoughts and personal growth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Experience</span>
+                <h2 class="section-title">Professional Journey</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-info">
+                                <h3>Software Engineer-2</h3>
+                                <span class="company">R3 Corda</span>
+                            </div>
+                            <span class="timeline-date">Sept 2025 – Nov 2025</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Streamlined Service Account Gateway toward Clean Architecture, making it platform-agnostic and improving testability/maintainability by <strong>30%</strong></li>
+                            <li>Engineered Open Policy Agent authorization, introducing a <strong>zero-trust, security-first</strong> access model for Central Bank Digital Currency (CBDC) services</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Ktor</span>
+                            <span class="tag">OPA</span>
+                            <span class="tag">Clean Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-info">
+                                <h3>Software Development Engineer-1</h3>
+                                <span class="company">Jio Platforms Limited</span>
+                            </div>
+                            <span class="timeline-date">Oct 2023 – Sept 2025</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Migrated microservices from Python to TypeScript, achieving <strong>75% increase</strong> in service availability and <strong>80% boost</strong> in request-handling capacity</li>
+                            <li>Optimized media server scalability for JioMeet & JioEvents, enabling <strong>2× participants per node</strong> and <strong>23% cloud cost savings</strong></li>
+                            <li>Architected scalable chat microservice for JioMeet Enterprise serving <strong>1M+ user base</strong></li>
+                            <li>Automated Media Engine Stack setup using Ansible, reducing deployment time by <strong>60%</strong></li>
+                            <li>Pioneered MCU capabilities designed to reduce client-side bandwidth by up to <strong>60%</strong> for 500+ participant meetings</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">WebRTC</span>
+                            <span class="tag">LiveKit</span>
+                            <span class="tag">Ansible</span>
+                            <span class="tag">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-info">
+                                <h3>Full Stack Development Intern</h3>
+                                <span class="company">Zedex Info Pvt Ltd</span>
+                            </div>
+                            <span class="timeline-date">June 2022 – March 2023</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Developed comprehensive HR Management System, reducing manual tracking efforts by <strong>80%</strong></li>
+                            <li>Designed secure RESTful APIs with robust authentication and role-based authorization</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Full Stack</span>
+                            <span class="tag">REST APIs</span>
+                            <span class="tag">Authentication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-quote">
+                <div class="quote-decoration"></div>
+                <blockquote>
+                    "When the world shoves you around, you just gotta stand up and shove back. 
+                    It's not like somebody's gonna save you if you start babbling excuses."
+                </blockquote>
+                <cite>— Roronoa Zoro, One Piece</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Skills</span>
+                <h2 class="section-title">Technical Arsenal</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                            </svg>
+                        </div>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill">TypeScript</span>
+                        <span class="pill">JavaScript</span>
+                        <span class="pill">Java</span>
+                        <span class="pill">Python</span>
+                        <span class="pill">Kotlin</span>
+                        <span class="pill">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M8 21h8M12 17v4"/>
+                            </svg>
+                        </div>
+                        <h3>Backend & Systems</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill">Node.js</span>
+                        <span class="pill">Spring Boot</span>
+                        <span class="pill">Django/DRF</span>
+                        <span class="pill">Ktor</span>
+                        <span class="pill">WebRTC</span>
+                        <span class="pill">LiveKit</span>
+                        <span class="pill">OPA</span>
+                        <span class="pill">RabbitMQ</span>
+                        <span class="pill">Microservices</span>
+                        <span class="pill">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3>DevOps & Cloud</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill">Docker</span>
+                        <span class="pill">Kubernetes</span>
+                        <span class="pill">Ansible</span>
+                        <span class="pill">Terraform</span>
+                        <span class="pill">Jenkins</span>
+                        <span class="pill">CI/CD</span>
+                        <span class="pill">Nginx</span>
+                        <span class="pill">GCP</span>
+                        <span class="pill">Linux</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                            </svg>
+                        </div>
+                        <h3>Databases & Caching</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill">MongoDB</span>
+                        <span class="pill">PostgreSQL</span>
+                        <span class="pill">Redis</span>
+                        <span class="pill">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Monitoring & Observability</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill">Prometheus</span>
+                        <span class="pill">Grafana</span>
+                        <span class="pill">Elasticsearch</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-quote">
+                <blockquote>
+                    "Everyone is a slave to something."
+                </blockquote>
+                <cite>— Askeladd, Vinland Saga</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Education</span>
+                <h2 class="section-title">Academic Background</h2>
+            </div>
+            <div class="education-card">
+                <div class="edu-icon">🎓</div>
+                <div class="edu-content">
+                    <h3>Mumbai University</h3>
+                    <p class="edu-degree">BE in Computer Engineering</p>
+                    <p class="edu-date">July 2019 – July 2023</p>
+                    <div class="edu-score">
+                        <span class="score-label">CGPA</span>
+                        <span class="score-value">9.67 / 10.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's Build Something Amazing</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>
+                        I'm always excited to connect with fellow developers, potential collaborators, 
+                        or anyone who wants to discuss distributed systems, anime, or the latest tech trends.
+                    </p>
+                    <div class="contact-quote">
+                        <blockquote>
+                            "A true warrior doesn't dwell on the past. He moves forward and keeps growing."
+                        </blockquote>
+                        <cite>— Thorfinn, Vinland Saga</cite>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:antonybush95@gmail.com" class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">antonybush95@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:+917506750350" class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">+91-7506750350</span>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/antonybush95" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">antonybush95</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/AntonyBush" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">AntonyBush</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-quote">
+                <p>"Power isn't determined by your size, but the size of your heart and dreams."</p>
+                <span>— Monkey D. Luffy</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Antony Bush. Built with passion and ☕</p>
+                <p class="footer-inspiration">Inspired by One Piece & Vinland Saga</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
