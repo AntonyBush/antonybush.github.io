@@ -14,6 +14,11 @@ const animeQuotes = [
         anime: "One Piece"
     },
     {
+        text: "When you arise in the morning think of what a privilege it is to be alive, to think, to enjoy, to love",
+        author: "Marcus Aurelius",
+        anime: "Meditations"
+    },
+    {
         text: "Power isn't determined by your size, but the size of your heart and dreams.",
         author: "Monkey D. Luffy",
         anime: "One Piece"
@@ -27,6 +32,11 @@ const animeQuotes = [
         text: "A scar on the back is a shame for a swordsman.",
         author: "Roronoa Zoro",
         anime: "One Piece"
+    },
+    {
+        text: "It never ceases to amaze me: we all love themselves more than other people, but care more about their opinions than our own.",
+        author: "Marcus Aurelius",
+        anime: "Meditations"
     },
     {
         text: "There's only one way to live life, and that's without regrets.",
@@ -83,8 +93,9 @@ const typingTexts = [
     "Backend Software Engineer",
     "Distributed Systems Architect",
     "WebRTC Specialist",
+    "Weekend Procrastinator",
     "Microservices Expert",
-    "Building Scalable Solutions"
+    "Building Scalable Solutions",
 ];
 
 let textIndex = 0;
@@ -99,7 +110,7 @@ function typeText() {
     if (!typingElement) return;
 
     const currentText = typingTexts[textIndex];
-    
+
     if (isDeleting) {
         typingElement.textContent = currentText.substring(0, charIndex - 1);
         charIndex--;
@@ -156,7 +167,7 @@ function initNavigation() {
 
     // Active link on scroll
     const sections = document.querySelectorAll('section[id]');
-    
+
     window.addEventListener('scroll', () => {
         const scrollY = window.pageYOffset;
 
@@ -184,7 +195,7 @@ function initFloatingQuote() {
     const floatingQuote = document.getElementById('floating-quote');
     const quoteText = floatingQuote.querySelector('.quote-text');
     const quoteAuthor = floatingQuote.querySelector('.quote-author');
-    
+
     let currentQuoteIndex = 0;
     let lastScrollY = window.scrollY;
     let quoteVisible = false;
@@ -194,10 +205,10 @@ function initFloatingQuote() {
         const quote = animeQuotes[currentQuoteIndex];
         quoteText.textContent = `"${quote.text}"`;
         quoteAuthor.textContent = `— ${quote.author}, ${quote.anime}`;
-        
+
         floatingQuote.classList.add('visible');
         quoteVisible = true;
-        
+
         // Hide after 8 seconds
         clearTimeout(quoteTimeout);
         quoteTimeout = setTimeout(() => {
@@ -210,7 +221,7 @@ function initFloatingQuote() {
     // Show quote on significant scroll
     window.addEventListener('scroll', () => {
         const scrollDiff = Math.abs(window.scrollY - lastScrollY);
-        
+
         if (scrollDiff > 300 && !quoteVisible && window.scrollY > 500) {
             showQuote();
             lastScrollY = window.scrollY;
@@ -257,7 +268,7 @@ function initScrollReveal() {
 // ===================================
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -279,12 +290,12 @@ function initSmoothScroll() {
 // ===================================
 function initParallax() {
     const visualCard = document.querySelector('.visual-card');
-    
+
     if (visualCard && window.innerWidth > 768) {
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth - 0.5) * 20;
             const y = (e.clientY / window.innerHeight - 0.5) * 20;
-            
+
             visualCard.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
         });
     }
@@ -295,7 +306,7 @@ function initParallax() {
 // ===================================
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
-    
+
     const observerOptions = {
         threshold: 0.5
     };
@@ -307,12 +318,12 @@ function animateCounters() {
                 const value = counter.textContent;
                 const numValue = parseFloat(value);
                 const suffix = value.replace(/[0-9.]/g, '');
-                
+
                 if (!isNaN(numValue) && !counter.classList.contains('animated')) {
                     counter.classList.add('animated');
                     animateValue(counter, 0, numValue, 1500, suffix);
                 }
-                
+
                 observer.unobserve(counter);
             }
         });
@@ -324,28 +335,28 @@ function animateCounters() {
 function animateValue(element, start, end, duration, suffix) {
     const startTime = performance.now();
     const isDecimal = end % 1 !== 0;
-    
+
     function update(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        
+
         // Easing function
         const easeOutQuart = 1 - Math.pow(1 - progress, 4);
         const currentValue = start + (end - start) * easeOutQuart;
-        
+
         if (isDecimal) {
             element.textContent = currentValue.toFixed(2) + suffix;
         } else {
             element.textContent = Math.floor(currentValue) + suffix;
         }
-        
+
         if (progress < 1) {
             requestAnimationFrame(update);
         } else {
             element.textContent = end + suffix;
         }
     }
-    
+
     requestAnimationFrame(update);
 }
 
@@ -354,13 +365,13 @@ function animateValue(element, start, end, duration, suffix) {
 // ===================================
 function initSkillHoverEffect() {
     const pills = document.querySelectorAll('.pill');
-    
+
     pills.forEach(pill => {
-        pill.addEventListener('mouseenter', function() {
+        pill.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-3px) scale(1.05)';
         });
-        
-        pill.addEventListener('mouseleave', function() {
+
+        pill.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
@@ -371,7 +382,7 @@ function initSkillHoverEffect() {
 // ===================================
 function initTimelineAnimation() {
     const timelineItems = document.querySelectorAll('.timeline-item');
-    
+
     timelineItems.forEach((item, index) => {
         item.style.transitionDelay = `${index * 0.15}s`;
     });
@@ -383,7 +394,7 @@ function initTimelineAnimation() {
 function initKonamiCode() {
     const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
     let konamiIndex = 0;
-    
+
     document.addEventListener('keydown', (e) => {
         if (e.code === konamiCode[konamiIndex]) {
             konamiIndex++;
@@ -414,7 +425,7 @@ function activateEasterEgg() {
         z-index: 9999;
         animation: fadeIn 0.5s ease;
     `;
-    
+
     overlay.innerHTML = `
         <div style="text-align: center; color: white; padding: 2rem;">
             <h2 style="font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
@@ -426,14 +437,14 @@ function activateEasterEgg() {
             <p style="color: #64748b; font-size: 0.9rem;">Click anywhere to close</p>
         </div>
     `;
-    
+
     overlay.addEventListener('click', () => {
         overlay.style.animation = 'fadeOut 0.3s ease forwards';
         setTimeout(() => overlay.remove(), 300);
     });
-    
+
     document.body.appendChild(overlay);
-    
+
     // Add keyframe animation
     const style = document.createElement('style');
     style.textContent = `
@@ -468,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Handle page visibility changes
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-        document.title = 'Come back! | Antony Bush';
+        document.title = '‼️Come back | Antony Bush';
     } else {
         document.title = 'Antony Bush | Backend Software Engineer';
     }
