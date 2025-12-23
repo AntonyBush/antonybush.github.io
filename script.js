@@ -468,6 +468,7 @@ const sections = [
     { id: 'section-about', file: 'sections/about.html' },
     { id: 'section-experience', file: 'sections/experience.html' },
     { id: 'section-skills', file: 'sections/skills.html' },
+    { id: 'section-blogs', file: 'sections/blogs.html' },
     { id: 'section-education', file: 'sections/education.html' },
     { id: 'section-resume', file: 'sections/resume.html' },
     { id: 'section-contact', file: 'sections/contact.html' },
@@ -494,6 +495,58 @@ async function loadSections() {
 }
 
 // ===================================
+// Blog Cards Loader
+// ===================================
+async function initBlogCards() {
+    const blogsGrid = document.getElementById('blogs-grid');
+    if (!blogsGrid) return;
+
+    try {
+        const response = await fetch('blogs/blogs.json');
+        const data = await response.json();
+
+        data.blogs.forEach(blog => {
+            const card = document.createElement('a');
+            card.href = `pages/blog.html?id=${blog.id}`;
+            card.className = 'blog-card' + (blog.featured ? ' featured' : '');
+
+            card.innerHTML = `
+                <div class="blog-card-header">
+                    <div class="blog-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <path d="M12 18v-6M9 15l3 3 3-3"/>
+                        </svg>
+                    </div>
+                    ${blog.featured ? '<span class="blog-card-featured">Featured</span>' : ''}
+                </div>
+                <h3 class="blog-card-title">${blog.title}</h3>
+                <p class="blog-card-subtitle">${blog.subtitle || ''}</p>
+                <p class="blog-card-description">${blog.description}</p>
+                <div class="blog-card-meta">
+                    <span class="blog-card-date">${new Date(blog.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                    <span class="blog-card-read-time">${blog.readTime}</span>
+                </div>
+                <div class="blog-card-tags">
+                    ${blog.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+                </div>
+                <div class="blog-card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            `;
+
+            blogsGrid.appendChild(card);
+        });
+    } catch (error) {
+        console.warn('Could not load blog cards:', error);
+        blogsGrid.innerHTML = '<p class="blogs-error">Blog posts coming soon...</p>';
+    }
+}
+
+// ===================================
 // Initialize Everything
 // ===================================
 document.addEventListener('DOMContentLoaded', async () => {
@@ -511,6 +564,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initSkillHoverEffect();
     initTimelineAnimation();
     initKonamiCode();
+    initBlogCards();
 });
 
 // Handle page visibility changes

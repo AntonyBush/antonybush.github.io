@@ -1,0 +1,20 @@
+{
+    "blogs": [
+        {
+            "id": "beejs-network-guide",
+            "title": "Network Programming Fundamentals",
+            "subtitle": "My Journey from Sockets to WebRTC",
+            "description": "I wanted to understand WebRTC, but first I needed to master the fundamentals. Here's my distilled overview of IP addresses, ports, and sockets from Beej's legendary guide.",
+            "tags": [
+                "networking",
+                "sockets",
+                "webrtc",
+                "systems"
+            ],
+            "date": "2024-12-23",
+            "readTime": "10 min",
+            "contentFile": "beejs-network-guide.md",
+            "featured": true
+        }
+    ]
+}
