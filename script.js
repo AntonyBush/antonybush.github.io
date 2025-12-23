@@ -461,9 +461,46 @@ function activateEasterEgg() {
 }
 
 // ===================================
+// Section Loader - Loads HTML partials
+// ===================================
+const sections = [
+    { id: 'section-hero', file: 'sections/hero.html' },
+    { id: 'section-about', file: 'sections/about.html' },
+    { id: 'section-experience', file: 'sections/experience.html' },
+    { id: 'section-skills', file: 'sections/skills.html' },
+    { id: 'section-education', file: 'sections/education.html' },
+    { id: 'section-resume', file: 'sections/resume.html' },
+    { id: 'section-contact', file: 'sections/contact.html' },
+    { id: 'section-footer', file: 'sections/footer.html' }
+];
+
+async function loadSections() {
+    const loadPromises = sections.map(async (section) => {
+        try {
+            const response = await fetch(section.file);
+            if (response.ok) {
+                const html = await response.text();
+                const container = document.getElementById(section.id);
+                if (container) {
+                    container.innerHTML = html;
+                }
+            }
+        } catch (error) {
+            console.warn(`Could not load ${section.file}:`, error);
+        }
+    });
+
+    await Promise.all(loadPromises);
+}
+
+// ===================================
 // Initialize Everything
 // ===================================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Load all sections first
+    await loadSections();
+
+    // Then initialize all functionality
     typeText();
     initNavigation();
     initFloatingQuote();
