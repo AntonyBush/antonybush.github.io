@@ -4,7 +4,7 @@
             "id": "beejs-network-guide",
             "title": "Network Programming Fundamentals",
             "subtitle": "My Journey from Sockets to WebRTC",
-            "description": "I wanted to understand WebRTC, but first I needed to master the fundamentals. Here's my distilled overview of IP addresses, ports, and sockets from Beej's legendary guide.",
+            "description": "I wanted to understand WebRTC, but first I needed to master the fundamentals. Here's my distilled overview of IP addresses, ports, and sockets from Beej's guide.",
             "tags": [
                 "networking",
                 "sockets",

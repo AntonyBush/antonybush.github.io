@@ -97,7 +97,7 @@ Forget this, and your port numbers will look completely wrong on the receiving e
 
 Everything in Unix is a file descriptor (fd). It is an integer/ID which points to an open file where we can read & write. Sockets are no exception—they're just file descriptors that let you send and receive data over a network.
 
-![Socket Programming Deep Dive](beej/images/socket-detailed.png)
+![Socket Programming Deep Dive](beej/images/Socket.excalidraw.svg)
 
 ### Two Types of Sockets (Internet Sockets)
 
@@ -257,9 +257,10 @@ The fundamentals don't change—just the abstraction level.
 
 ## Resources
 
-📚 **[Beej's Guide to Network Programming](https://beej.us/guide/bgnet/html/split/index.html)** — The legendary guide that taught generations of programmers how networks work. If you want to go deeper into any of these concepts, this is your starting point.
+📚 **[Beej's Guide to Network Programming](https://beej.us/guide/bgnet/html/split/index.html)** — A very nice guide on how networks work. If you want to go deeper into any of these concepts, this is your starting point.
 
 🚀 **[Client-Server Implementation](https://beej.us/guide/bgnet/html/split/client-server-background.html#client-server-background)** — A simple explanation of the client-server model, the foundation of modern networking.
+
 ---
 
 *These notes are from my study of Beej's Guide to Network Programming. It remains one of the best resources for understanding network programming from first principles.*
