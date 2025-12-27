@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Title -->
+    <title>{{TITLE}} | Antony Bush</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <meta name="author" content="Antony Bush">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:site_name" content="Antony Bush - Backend Software Engineer">
+    <meta property="article:author" content="Antony Bush">
+    <meta property="article:published_time" content="{{PUBLISHED_DATE}}">
+    {{OG_TAGS}}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+{{SCHEMA_JSON}}
+    </script>
+</head>
+
+<body class="blog-page">
+    <!-- Animated Background (shared) -->
+    <div class="bg-animation">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+    </div>
+
+    <!-- Navigation (loaded dynamically) -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Blog Content -->
+    <main class="blog-main" id="blog-main">
+        <div class="blog-container">
+            <!-- Loading State -->
+            <div class="blog-loading" id="blog-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading blog...</p>
+            </div>
+
+            <!-- Blog Header -->
+            <header class="blog-header" id="blog-header" style="display: none;">
+                <a href="../index.html#blogs" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Blogs
+                </a>
+                <div class="blog-meta">
+                    <span class="blog-date" id="blog-date"></span>
+                    <span class="blog-read-time" id="blog-read-time"></span>
+                </div>
+                <h1 class="blog-title" id="blog-title"></h1>
+                <p class="blog-subtitle" id="blog-subtitle"></p>
+                <div class="blog-tags" id="blog-tags"></div>
+            </header>
+
+            <!-- Diagrams Section -->
+            <div class="blog-diagrams" id="blog-diagrams" style="display: none;"></div>
+
+            <!-- Main Content -->
+            <article class="blog-content" id="blog-content" style="display: none;"></article>
+        </div>
+    </main>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../blog.js"></script>
+</body>
+
+</html>

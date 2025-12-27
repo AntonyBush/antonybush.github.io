@@ -3,12 +3,27 @@
 // Handles Markdown rendering and Excalidraw image support
 // ===================================
 
-// Detect if we're in pages/ folder and set base path accordingly
+// Detect if we're in pages/ or blogs/ folder and set base path accordingly
 const isInPagesFolder = window.location.pathname.includes('/pages/');
-const basePath = isInPagesFolder ? '../' : '';
+const isInBlogsFolder = window.location.pathname.includes('/blogs/');
+const basePath = (isInPagesFolder || isInBlogsFolder) ? '../' : '';
 
-// Get blog ID from URL parameters
+// Get blog ID from URL path or query parameters
+// Supports both:
+//   - Path-based: /blogs/beejs-network-guide.html -> "beejs-network-guide"
+//   - Query-based: /pages/blog.html?id=beejs-network-guide -> "beejs-network-guide" (backwards compatibility)
 function getBlogId() {
+    const pathname = window.location.pathname;
+
+    // Try to extract from path first (new format: /blogs/{id}.html)
+    if (pathname.includes('/blogs/') && pathname.endsWith('.html')) {
+        const match = pathname.match(/\/blogs\/([^/]+)\.html$/);
+        if (match && match[1] !== 'blogs') {
+            return match[1];
+        }
+    }
+
+    // Fall back to query parameter (old format: ?id=blog-id)
     const params = new URLSearchParams(window.location.search);
     return params.get('id');
 }

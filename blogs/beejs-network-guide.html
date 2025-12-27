@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Title -->
+    <title>Network Programming Fundamentals | Antony Bush</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="I wanted to understand WebRTC, but first I needed to master the fundamentals. Here's my distilled overview of IP addresses, ports, and sockets from Beej's guide.">
+    <meta name="keywords" content="networking, sockets, webrtc, systems, antony bush, blog, software engineering">
+    <meta name="author" content="Antony Bush">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Network Programming Fundamentals">
+    <meta property="og:description" content="I wanted to understand WebRTC, but first I needed to master the fundamentals. Here's my distilled overview of IP addresses, ports, and sockets from Beej's guide.">
+    <meta property="og:url" content="https://antonybush.github.io/blogs/beejs-network-guide.html">
+    <meta property="og:site_name" content="Antony Bush - Backend Software Engineer">
+    <meta property="article:author" content="Antony Bush">
+    <meta property="article:published_time" content="2024-12-23">
+        <meta property="article:tag" content="networking">
+    <meta property="article:tag" content="sockets">
+    <meta property="article:tag" content="webrtc">
+    <meta property="article:tag" content="systems">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Network Programming Fundamentals">
+    <meta name="twitter:description" content="I wanted to understand WebRTC, but first I needed to master the fundamentals. Here's my distilled overview of IP addresses, ports, and sockets from Beej's guide.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://antonybush.github.io/blogs/beejs-network-guide.html">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Network Programming Fundamentals",
+        "description": "I wanted to understand WebRTC, but first I needed to master the fundamentals. Here's my distilled overview of IP addresses, ports, and sockets from Beej's guide.",
+        "author": {
+                "@type": "Person",
+                "name": "Antony Bush",
+                "url": "https://antonybush.github.io"
+        },
+        "datePublished": "2024-12-23",
+        "dateModified": "2024-12-23",
+        "publisher": {
+                "@type": "Person",
+                "name": "Antony Bush"
+        },
+        "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://antonybush.github.io/blogs/beejs-network-guide.html"
+        },
+        "keywords": [
+                "networking",
+                "sockets",
+                "webrtc",
+                "systems"
+        ]
+}
+    </script>
+</head>
+
+<body class="blog-page">
+    <!-- Animated Background (shared) -->
+    <div class="bg-animation">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+    </div>
+
+    <!-- Navigation (loaded dynamically) -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Blog Content -->
+    <main class="blog-main" id="blog-main">
+        <div class="blog-container">
+            <!-- Loading State -->
+            <div class="blog-loading" id="blog-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading blog...</p>
+            </div>
+
+            <!-- Blog Header -->
+            <header class="blog-header" id="blog-header" style="display: none;">
+                <a href="../index.html#blogs" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Blogs
+                </a>
+                <div class="blog-meta">
+                    <span class="blog-date" id="blog-date"></span>
+                    <span class="blog-read-time" id="blog-read-time"></span>
+                </div>
+                <h1 class="blog-title" id="blog-title"></h1>
+                <p class="blog-subtitle" id="blog-subtitle"></p>
+                <div class="blog-tags" id="blog-tags"></div>
+            </header>
+
+            <!-- Diagrams Section -->
+            <div class="blog-diagrams" id="blog-diagrams" style="display: none;"></div>
+
+            <!-- Main Content -->
+            <article class="blog-content" id="blog-content" style="display: none;"></article>
+        </div>
+    </main>
+
+    <!-- Footer (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../blog.js"></script>
+</body>
+
+</html>
