@@ -15,6 +15,22 @@
             "readTime": "15 min",
             "contentFile": "beejs-network-guide.md",
             "featured": true
+        },
+        {
+            "id": "tabout",
+            "title": "TabOut",
+            "subtitle": "A chromium extension to help you manage your time",
+            "description": "I wanted to keep track of where I'm spending most of my time in the browser. I searched in extension store and found none to my liking. so I thought of creating one myself (of course with some use of ai). so here it is TabOut.",
+            "tags": [
+                "productivity",
+                "time-management",
+                "extension",
+                "chromium"
+            ],
+            "date": "2026-01-11",
+            "readTime": "5 min",
+            "contentFile": "tabout.md",
+            "featured": true
         }
     ]
 }
