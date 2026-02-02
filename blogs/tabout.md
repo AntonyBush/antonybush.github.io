@@ -10,6 +10,10 @@ TabOut helps you maintain healthy browsing habits with these key features:
 - **Smart Limits**: Set daily time limits for specific websites to stay productive.
 - **Gentle Nudges**: Get a full-page blocking overlay when you exceed your set limits.
 
+## Data Size Estimation
+
+Since all data is stored locally, you might worry about it taking up too much space. But there's no need for concern! Based on real-world usage data (~1.3 KB per day), storing **5 years** of your browsing history (if you are using for more than 5 years, please tell me you are maintaining it) would only occupy approximately **2.4 MB**. That's nothing compared to your data usage!
+
 ## How to Install
 
 Since this is a custom extension, you can get the code from [GitHub](https://github.com/AntonyBush/TabOut) and install it in developer mode:
