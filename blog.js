@@ -97,6 +97,19 @@ function parseMarkdown(md) {
     return html;
 }
 
+// Helper to dynamically update meta tags for SEO
+function updateMeta(attr, key, value) {
+    let el = document.querySelector(`meta[${attr}="${key}"]`);
+    if (el) {
+        el.setAttribute('content', value);
+    } else {
+        el = document.createElement('meta');
+        el.setAttribute(attr, key);
+        el.setAttribute('content', value);
+        document.head.appendChild(el);
+    }
+}
+
 // Render blog content
 async function renderBlog() {
     const blogId = getBlogId();
@@ -119,6 +132,17 @@ async function renderBlog() {
 
         // Update page title
         document.title = `${blog.title} | Antony Bush`;
+
+        // Dynamically update SEO meta tags for JS-rendering crawlers
+        const canonicalUrl = `https://antonybush.github.io/blogs/${blog.id}.html`;
+        updateMeta('name', 'description', blog.description);
+        updateMeta('property', 'og:title', blog.title);
+        updateMeta('property', 'og:description', blog.description);
+        updateMeta('property', 'og:url', canonicalUrl);
+        updateMeta('name', 'twitter:title', blog.title);
+        updateMeta('name', 'twitter:description', blog.description);
+        const canonicalEl = document.querySelector('link[rel="canonical"]');
+        if (canonicalEl) canonicalEl.href = canonicalUrl;
 
         // Populate header
         document.getElementById('blog-title').textContent = blog.title;

@@ -507,7 +507,7 @@ async function initBlogCards() {
 
         data.blogs.forEach(blog => {
             const card = document.createElement('a');
-            card.href = `pages/blog.html?id=${blog.id}`;
+            card.href = `blogs/${blog.id}.html`;
             card.className = 'blog-card' + (blog.featured ? ' featured' : '');
 
             card.innerHTML = `
