@@ -34,8 +34,8 @@
     --shadow-glow: 0 0 40px rgba(129, 140, 248, 0.25);
 
     /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-display: 'Outfit', sans-serif;
+    --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Space Grotesk', sans-serif;
 
     /* Spacing */
     --section-padding: clamp(4rem, 10vw, 8rem);
