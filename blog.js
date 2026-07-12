@@ -3,6 +3,16 @@
 // Handles Markdown rendering and Excalidraw image support
 // ===================================
 
+// ===================================
+// Theme Initialization (runs immediately to prevent flash)
+// ===================================
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+})();
+
 // Detect if we're in pages/ or blogs/ folder and set base path accordingly
 const isInPagesFolder = window.location.pathname.includes('/pages/');
 const isInBlogsFolder = window.location.pathname.includes('/blogs/');
@@ -277,11 +287,36 @@ function initMobileNav() {
 }
 
 // ===================================
+// Theme Toggle (for blog pages)
+// ===================================
+function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        if (newTheme === 'dark') {
+            html.removeAttribute('data-theme');
+        } else {
+            html.setAttribute('data-theme', newTheme);
+        }
+
+        localStorage.setItem('theme', newTheme);
+    });
+}
+
+// ===================================
 // Initialize Everything
 // ===================================
 document.addEventListener('DOMContentLoaded', async () => {
     // Load shared components first
     await loadSharedComponents();
+
+    // Initialize theme toggle (navbar loaded dynamically)
+    initThemeToggle();
 
     // Initialize mobile nav
     initMobileNav();
@@ -289,4 +324,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Then render the blog
     await renderBlog();
 });
-

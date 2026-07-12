@@ -1,4 +1,15 @@
 // ===================================
+// Theme Initialization (runs immediately to prevent flash)
+// ===================================
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    // Default is dark (no attribute needed, :root handles it)
+})();
+
+// ===================================
 // Anime Quotes Collection
 // ===================================
 const animeQuotes = [
@@ -428,7 +439,7 @@ function activateEasterEgg() {
 
     overlay.innerHTML = `
         <div style="text-align: center; color: white; padding: 2rem;">
-            <h2 style="font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            <h2 style="font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(135deg, #818cf8, #fb7185); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 🏴‍☠️ Nakama Mode Activated! 🏴‍☠️
             </h2>
             <p style="font-size: 1.5rem; color: #94a3b8; margin-bottom: 2rem;">
@@ -547,6 +558,28 @@ async function initBlogCards() {
 }
 
 // ===================================
+// Theme Toggle
+// ===================================
+function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        if (newTheme === 'dark') {
+            html.removeAttribute('data-theme');
+        } else {
+            html.setAttribute('data-theme', newTheme);
+        }
+
+        localStorage.setItem('theme', newTheme);
+    });
+}
+
+// ===================================
 // Initialize Everything
 // ===================================
 document.addEventListener('DOMContentLoaded', async () => {
@@ -556,6 +589,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Then initialize all functionality
     typeText();
     initNavigation();
+    initThemeToggle();
     initFloatingQuote();
     initScrollReveal();
     initSmoothScroll();
